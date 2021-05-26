@@ -1,0 +1,26 @@
+name: Node.js CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+        mongodb-version: [4.0, 4.2, 4.4]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.4.0
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
+      - run: npm install
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
+        env:
+          CI: true
+          MONGOOSE_URL: mongodb://localhost:27017/auth
