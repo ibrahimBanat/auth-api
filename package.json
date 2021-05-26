@@ -1,0 +1,36 @@
+{
+  "name": "auth-api",
+  "version": "1.0.0",
+  "description": "Role Based Access Control (RBAC) using an Access Control List (ACL), allowing to not only restrict access to routes for valid users,",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahimBanat/auth-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibrahimBanat/auth-api/issues"
+  },
+  "homepage": "https://github.com/ibrahimBanat/auth-api#readme",
+  "dependencies": {
+    "@code-fellows/supergoose": "^1.0.11",
+    "base-64": "^1.0.0",
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.14.0",
+    "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.11.12",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "supertest": "^6.0.1"
+  }
+}
